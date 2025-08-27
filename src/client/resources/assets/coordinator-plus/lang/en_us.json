@@ -1,0 +1,44 @@
+{
+  "coordinator-plus.directions.south.short": "S",
+  "coordinator-plus.directions.east.short": "E",
+  "coordinator-plus.directions.west.short": "W",
+  "coordinator-plus.directions.north.short": "N",
+  "coordinator-plus.directions.south_east.short": "SE",
+  "coordinator-plus.directions.south_west.short": "SW",
+  "coordinator-plus.directions.north_east.short": "NE",
+  "coordinator-plus.directions.north_west.short": "NW",
+
+  "coordinator-plus.directions.south.predict": "Z+",
+  "coordinator-plus.directions.east.predict": "X+",
+  "coordinator-plus.directions.west.predict": "X-",
+  "coordinator-plus.directions.north.predict": "Z-",
+  "coordinator-plus.directions.south_east.predict": "Z+ X+",
+  "coordinator-plus.directions.south_west.predict": "Z+ X-",
+  "coordinator-plus.directions.north_east.predict": "Z- X+",
+  "coordinator-plus.directions.north_west.predict": "Z- X-",
+
+  "coordinator-plus.directions.concat": "%1$s %2$s",
+
+  "coordinator-plus.keybinds": "Coordinator+ Keybinds",
+  "coordinator-plus.keybind.open_menu": "Coordinator+ Settings",
+  "coordinator-plus.keybind.toggle_rendering": "Toggle Rendering",
+
+
+  "coordinator-plus.options.title": "Coordinator+ Settings",
+
+  "coordinator-plus.options.toggle": "Render Bar",
+
+  "coordinator-plus.options.direction": "Direction",
+  "coordinator-plus.options.direction.cardinal": "Cardinal",
+  "coordinator-plus.options.direction.cardinal.tooltip": "Shows the cardinal direction under markers.",
+  "coordinator-plus.options.direction.predict": "Predict",
+  "coordinator-plus.options.direction.predict.tooltip": "Shows how your coordinates will change when moving towards a marker.",
+  "coordinator-plus.options.direction.cardinal_and_predict": "Cardinal And Predict",
+  "coordinator-plus.options.direction.cardinal_and_predict.tooltip": "Shows both.",
+
+  "coordinator-plus.options.coordinate": "Coordinates",
+  "coordinator-plus.options.coordinate.whole": "Whole",
+  "coordinator-plus.options.coordinate.whole.tooltip": "Rounds down your coordinates and shows them as whole numbers.",
+  "coordinator-plus.options.coordinate.two_decimal": "Two Decimal",
+  "coordinator-plus.options.coordinate.two_decimal.tooltip": "Rounds your coordinates to two decimal points"
+}
