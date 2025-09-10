@@ -3,6 +3,7 @@ package net.zapp;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import net.minecraft.client.MinecraftClient;
+import net.minecraft.client.gl.RenderPipelines;
 import net.minecraft.client.gui.DrawContext;
 import net.minecraft.client.render.RenderLayer;
 import net.minecraft.entity.Entity;
@@ -48,7 +49,7 @@ public final class CoordinateBarHud {
             for (int i = 0 ; i < 180 ; i++) {
                 renderer.renderBarPart(yaw, i - 89);
             }
-            context.drawTexture(RenderLayer::getGuiTexturedOverlay, OVERLAY, (context.getScaledWindowWidth() / 2) - 91, 13, 0, 0, 182, 5, 182, 5);
+            context.drawTexture(RenderPipelines.GUI_TEXTURED, OVERLAY, (context.getScaledWindowWidth() / 2) - 91, 13, 0, 0, 182, 5, 182, 5);
             for (int i = 0 ; i < 120 ; i++) {
                 renderer.renderLine(yaw, i * 3);
             }

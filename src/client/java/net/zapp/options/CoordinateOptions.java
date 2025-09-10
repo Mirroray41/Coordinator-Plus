@@ -11,7 +11,7 @@ public enum CoordinateOptions implements TranslatableOption {
     WHOLE(0, Identifier.of(CoordinatorPlusClient.MOD_ID, "options.coordinate.whole").toTranslationKey()),
     TWO_DECIMAL(1, Identifier.of(CoordinatorPlusClient.MOD_ID, "options.coordinate.two_decimal").toTranslationKey());
 
-    private static final IntFunction<CoordinateOptions> BY_ID = ValueLists.createIdToValueFunction(CoordinateOptions::getId, values(), ValueLists.OutOfBoundsHandling.WRAP);
+    private static final IntFunction<CoordinateOptions> BY_ID = ValueLists.createIndexToValueFunction(CoordinateOptions::getId, values(), ValueLists.OutOfBoundsHandling.WRAP);
     private final int id;
     private final String name;
 

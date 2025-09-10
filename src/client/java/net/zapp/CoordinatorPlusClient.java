@@ -3,8 +3,8 @@ package net.zapp;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientTickEvents;
 import net.fabricmc.fabric.api.client.keybinding.v1.KeyBindingHelper;
-import net.fabricmc.fabric.api.client.rendering.v1.HudLayerRegistrationCallback;
-import net.fabricmc.fabric.api.client.rendering.v1.IdentifiedLayer;
+import net.fabricmc.fabric.api.client.rendering.v1.hud.HudElementRegistry;
+import net.fabricmc.fabric.api.client.rendering.v1.hud.VanillaHudElements;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.gui.DrawContext;
 import net.minecraft.client.option.KeyBinding;
@@ -36,7 +36,7 @@ public class CoordinatorPlusClient implements ClientModInitializer {
 
         options = new CoordinatorOptions(client, new File(client.runDirectory,"config/coordinator-plus/options.txt"));
 
-		HudLayerRegistrationCallback.EVENT.register(layeredDrawer -> layeredDrawer.attachLayerBefore(IdentifiedLayer.CHAT, COORDINATOR_HUD_LAYER, CoordinatorPlusClient::render));
+        HudElementRegistry.attachElementBefore(VanillaHudElements.CHAT, COORDINATOR_HUD_LAYER, CoordinatorPlusClient::render);
 
         openCoordinatorKeybind = KeyBindingHelper.registerKeyBinding(new KeyBinding(
                 COORDINATOR_OPEN_KEYBIND.toTranslationKey(), // The translation key of the keybinding's name

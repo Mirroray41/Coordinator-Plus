@@ -1,5 +1,6 @@
 package net.zapp.options;
 
+import net.minecraft.client.render.ChunkBuilderMode;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.TranslatableOption;
 import net.minecraft.util.function.ValueLists;
@@ -12,7 +13,8 @@ public enum DirectionOptions implements TranslatableOption {
     PREDICT(1, Identifier.of(CoordinatorPlusClient.MOD_ID, "options.direction.predict").toTranslationKey()),
     CARDINAL_AND_PREDICT(2, Identifier.of(CoordinatorPlusClient.MOD_ID, "options.direction.cardinal_and_predict").toTranslationKey());
 
-    private static final IntFunction<DirectionOptions> BY_ID = ValueLists.createIdToValueFunction(DirectionOptions::getId, values(), ValueLists.OutOfBoundsHandling.WRAP);
+
+    private static final IntFunction<DirectionOptions> BY_ID = ValueLists.createIndexToValueFunction(DirectionOptions::getId, values(), ValueLists.OutOfBoundsHandling.WRAP);
     private final int id;
     private final String name;
 
