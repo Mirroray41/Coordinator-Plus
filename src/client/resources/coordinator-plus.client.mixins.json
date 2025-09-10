@@ -3,7 +3,7 @@
 	"package": "net.zapp.mixin.client",
 	"compatibilityLevel": "JAVA_21",
 	"client": [
-      "BossbarOffsetMixin"
+      "BossBarOffsetMixin"
 	],
 	"injectors": {
 		"defaultRequire": 1
