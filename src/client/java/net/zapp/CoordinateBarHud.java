@@ -46,10 +46,8 @@ public final class CoordinateBarHud {
             Direction direction = entity.getHorizontalFacing();
             float yaw = entity.getYaw();
 
-            for (int i = 0 ; i < 1/*80*/ ; i++) {
-                renderer.renderBarPart(yaw, i - 89);
-            }
-            //context.drawTexture(RenderPipelines.GUI_TEXTURED, OVERLAY, (context.getScaledWindowWidth() / 2) - 91, 13, 0, 0, 182, 5, 182, 5);
+            renderer.renderBarPart(yaw, 0);
+            context.drawTexture(RenderPipelines.GUI_TEXTURED, OVERLAY, (context.getScaledWindowWidth() / 2) - 92, 13, 0, 0, 182, 5, 182, 5);
             for (int i = 0 ; i < 120 ; i++) {
                 renderer.renderLine(yaw, i * 3);
             }

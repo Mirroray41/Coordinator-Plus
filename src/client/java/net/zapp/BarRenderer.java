@@ -10,9 +10,14 @@ import net.minecraft.util.math.MathHelper;
 
 import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;
-import java.io.File;
-import java.io.IOException;
+import java.io.*;
+import java.nio.file.Files;
 import java.nio.file.Path;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.List;
+import java.util.zip.ZipEntry;
+import java.util.zip.ZipFile;
 
 public class BarRenderer {
     private final BarPartRenderer barPartRenderer;
@@ -68,45 +73,6 @@ abstract class AbstractTexturedPartRenderer {
     }
 
     public abstract void render(float currentYaw, int offset);
-}
-
-class BarPartRenderer extends AbstractPartRenderer {
-    private final DrawContext context;
-
-    public BarPartRenderer(MinecraftClient client, DrawContext context) {
-        super(client, context);
-        this.context = context;
-    }
-
-    @Override
-    public void render(float currentYaw, int offset) throws IOException {
-        /*float scaledOffset = (float) (offset) / context.getScaledWindowWidth() * 180;
-
-        int south = getProximityToYaw(currentYaw, scaledOffset, 0);
-        int southWest = getProximityToYaw(currentYaw, scaledOffset, 45);
-        int west = getProximityToYaw(currentYaw, scaledOffset, 90);
-        int northWest = getProximityToYaw(currentYaw, scaledOffset, 135);
-        int north = getProximityToYaw(currentYaw, scaledOffset, 180);
-        int northEast = getProximityToYaw(currentYaw, scaledOffset, 225);
-        int east = getProximityToYaw(currentYaw, scaledOffset, 270);
-        int southEast = getProximityToYaw(currentYaw, scaledOffset, 315);
-
-        int red = Math.max(255 - (south + east + southEast + (northEast / 2)), 0);
-        int green = Math.max(255 - (west + south + southWest + (northWest / 2)), 0);
-        int blue = Math.max(255 - (west + north + east + northEast + northWest), 0);
-
-        context.drawVerticalLine((context.getScaledWindowWidth() / 2) - offset, 13, 17, ColorHelper.getArgb(red, green, blue));*/
-
-        Identifier identifier = Identifier.of(CoordinatorPlusClient.MOD_ID, "textures/gui/sprites/tint_bar.png");
-        Path path = FabricLoader.getInstance().getGameDir().resolve(Path.of("assets",identifier.getNamespace(),identifier.getPath()));
-        System.out.println(path);
-        BufferedImage tint_template = ImageIO.read(path.toFile());// /assets/coordinator-plus/textures/gui/sprites/tint_bar.png
-        context.fill(1 ,1, 2, 2, ColorHelper.getArgb(0, 255, 0));
-    }
-
-    private int getProximityToYaw(float currentYaw, float scaledOffset, int offset) {
-        return Math.max(255 - Math.round(Math.abs(MathHelper.wrapDegrees((currentYaw - offset) - scaledOffset) / 180 * context.getScaledWindowWidth())), 0);
-    }
 }
 
 class LineRenderer extends AbstractPartRenderer {
